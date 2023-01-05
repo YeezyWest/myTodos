@@ -2,6 +2,7 @@ const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
 const search = document.querySelector('.search , input');
 const clock = document.querySelector('.clock');
+const btn = document.querySelector('.addMobile');
 
 
 //addTodo
@@ -35,6 +36,22 @@ addForm.addEventListener('submit', e =>{
   addForm.reset();
 }
 });
+
+
+// addMobile
+
+btn.addEventListener('click', e => {
+
+  e.preventDefault();
+
+  const todo = addForm.add.value.trim();
+
+  if(todo.length) {
+  generateTemplate(todo)
+  addForm.reset();
+  }
+});
+
 
 
 //deleteTodo
